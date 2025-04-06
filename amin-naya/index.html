@@ -4,8 +4,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Naya & Amin</title>
+    <title>Amin & Nadia | @flexation.id</title>
+    <link rel="preload" href="./styles/index.css" as="style">
     <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="icon" href="./assets/icons/flexation-pink.png" />
+
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -21,6 +24,33 @@
         href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css" />
     <link rel="stylesheet"
         href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css" />
+
+    <!-- SEO Tag -->
+    <!-- Deskripsi (Meta Description) -->
+    <meta name="description"
+        content="Flexation.id menyediakan layanan undangan nikahan digital yang elegan, mudah diakses, dan dapat disesuaikan. Pesan sekarang untuk hari spesial Anda.">
+
+    <!-- Keywords (Kata Kunci) -->
+    <meta name="keywords"
+        content="undangan nikahan digital, undangan pernikahan online, desain undangan nikah, undangan nikah digital, undangan nikah customizable, undangan nikah fleksibel">
+
+    <!-- Open Graph Meta Tags (untuk Facebook, LinkedIn, dll) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Undangan Nikahan Digital | Flexation.id">
+    <meta property="og:description"
+        content="Pesan undangan nikahan digital dengan desain elegan dan dapat disesuaikan di Flexation.id. Mudah diakses dan siap untuk hari spesial Anda.">
+    <meta property="og:image" content="https://www.flexation.id/assets/images/undangan-nikahan.jpg">
+    <!-- Ganti dengan gambar undangan nikahan yang relevan -->
+    <meta property="og:url" content="https://www.flexation.id/undangan-nikahan-digital">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Undangan Nikahan Digital | Flexation.id">
+    <meta name="twitter:description"
+        content="Pesan undangan nikahan digital yang elegan dan mudah diakses di Flexation.id. Sesuaikan dengan tema pernikahan Anda!">
+    <meta name="twitter:image" content="https://www.flexation.id/assets/images/undangan-nikahan.jpg">
+    <!-- Ganti dengan gambar undangan nikahan yang relevan -->
+    <meta name="twitter:site" content="@flexation_id">
 </head>
 
 <body class="relative bg-background200 text-white text-center lg:grid lg:grid-cols-3 lg:min-h-screen no-scrollbar">
@@ -31,11 +61,11 @@
             <div class="flex flex-col space-y-5 ">
                 <div class="font-medium text-xl">THE WEDDING OF</div>
                 <div data-aos="fade-up" class="bg-white rounded-full w-52 h-52 cursor-pointer object-cover">
-                    <img src="./assets/images/cover.JPEG" alt="Flexation | Naya & Amin"
+                    <img loading="lazy" src="./assets/images/cover.JPEG" alt="Flexation | Amin & Nadia"
                         class="w-52 h-52 rounded-full object-cover" onclick="imgModal.openModal(this)" />
                 </div>
                 <div class="text-text100 font-tangerine font-bold text-5xl">
-                    Naya & Amin
+                    Amin & Nadia
                 </div>
                 <div class="uppercase text-sm">MINGGU, 27 APRIL 2025</div>
             </div>
@@ -44,7 +74,7 @@
                 <div class="text-sm">Kepada Yth</div>
                 <div class="font-semibold" id="nama-tamu">Nama Tamu</div>
                 <button onclick="closeCover()"
-                    class="text-xs border p-2 px-5 rounded-xl hover:bg-background200 hover:text-white">
+                    class="text-xs border bg-background50 p-2 px-5 rounded-xl hover:bg-background200 hover:text-white">
                     <div class="flex items-center justify-center space-x-2">
                         <i class="fi fi-rr-envelope"></i>
                         <span>Buka Undangan</span>
@@ -63,18 +93,18 @@
                         <i class="fi fi-rs-record-vinyl text-2xl text-white"></i>
                     </div>
                 </div>
-                <audio autoplay loop id="audio" src="./assets/music/payung-teduh.mp3" type="audio/mpeg"></audio>
+                <audio autoplay loop id="audio" src="./assets/music/daun jatuh-untuk selalu senang.mp3" type="audio/mpeg"></audio>
             </div>
 
             <!-- header  -->
             <div class="flex flex-col space-y-10 py-10 pb-0 items-center min-h-screen bg-background100">
                 <div class="font-medium text-xl">THE WEDDING OF</div>
                 <div data-aos="fade-up" class="bg-white rounded-full w-52 h-52 cursor-pointer object-cover">
-                    <img src="./assets/images/cover.JPEG" alt="Flexation | Naya & Amin"
+                    <img loading="lazy" src="./assets/images/cover.JPEG" alt="Flexation | Amin & Nadia"
                         class="w-52 h-52 rounded-full object-cover" onclick="imgModal.openModal(this)" />
                 </div>
                 <div class="text-text100 font-tangerine font-bold text-5xl">
-                    Naya & Amin
+                    Amin & Nadia
                 </div>
                 <div class="uppercase">MINGGU, 27 APRIL 2025</div>
                 <div data-aos="fade-up" data-aos-duration="3000" class="space-y-5">
@@ -110,8 +140,10 @@
                         class="transition duration-300 ease-in-out delay-150 w-full h-auto">
                         <defs>
                             <linearGradient id="gradient" x1="50%" y1="100%" x2="50%" y2="0%">
-                                <stop offset="5%" stop-color="#2a2a2a"></stop>
-                                <stop offset="95%" stop-color="#363636"></stop>
+                                <!-- <stop offset="5%" stop-color="#2a2a2a"></stop>
+                                <stop offset="95%" stop-color="#363636"></stop> -->
+                                <stop offset="5%" stop-color="#4A3D4A"></stop>
+                                <stop offset="95%" stop-color="#6A4F6A"></stop>
                             </linearGradient>
                         </defs>
                         <path
@@ -151,12 +183,12 @@
                 <div class="space-y-5">
                     <!-- pengantin perempuan -->
                     <div class="flex flex-col items-center text-sm">
-                        <div data-aos="fade-up" class="bg-white w-36 h-56 rounded-full cursor-pointer object-cover">
-                            <img src="./assets/images/mempelai-wanita.JPEG" alt="Flexation | Naya & Amin"
-                                class="h-56 w-auto max-h-full rounded-full object-cover"
+                        <div data-aos="fade-up" class="bg-white w-44 h-60 rounded-full cursor-pointer object-cover">
+                            <img loading="lazy" src="./assets/images/mempelai-wanita.JPEG" alt="Flexation | Amin & Nadia"
+                                class="w-44 h-60 max-h-full rounded-full object-cover"
                                 onclick="imgModal.openModal(this)" />
                         </div>
-                        <div data-aos="fade-up" class="font-berkshire text-3xl py-2">
+                        <div data-aos="fade-up" class="font-berkshire text-4xl py-2">
                             Nadia Damayanti
                         </div>
                         <div data-aos="fade-up">
@@ -169,12 +201,12 @@
                     </div>
                     <!-- pengantin laki-laki -->
                     <div class="flex flex-col items-center text-sm">
-                        <div data-aos="fade-up" class="bg-white w-36 h-56 rounded-full cursor-pointer object-cover">
-                            <img src="./assets/images/mempelai-pria.JPEG" alt="Flexation | Naya & Amin"
-                                class="h-full w-auto max-h-full rounded-full object-cover"
+                        <div data-aos="fade-up" class="bg-white w-44 h-60 rounded-full cursor-pointer object-cover">
+                            <img loading="lazy" src="./assets/images/mempelai-pria.JPEG" alt="Flexation | Amin & Nadia"
+                                class="w-44 h-60 max-h-full rounded-full object-cover"
                                 onclick="imgModal.openModal(this)" />
                         </div>
-                        <div data-aos="fade-up" class="font-berkshire text-3xl py-2">
+                        <div data-aos="fade-up" class="font-berkshire text-4xl py-2">
                             Muhamad Amin
                         </div>
                         <div data-aos="fade-up">
@@ -292,46 +324,46 @@
                 <div class="grid grid-cols-2 gap-2" data-aos="fade-up" data-aos-duration="3000">
                     <div class="flex flex-col gap-2">
                         <div data-aos="fade-up" data-aos-duration="3000" class="rounded-xl cursor-pointer object-cover">
-                            <img src="./assets/images/prewed (1).JPEG" alt="Flexation | Naya & Amin"
+                            <img loading="lazy" src="./assets/images/prewed (1).JPEG" alt="Flexation | Amin & Nadia"
                                 class="h-auto w-full max-w-full object-cover" onclick="imgModal.openModal(this)" />
                         </div>
                         <div data-aos="fade-up" data-aos-duration="3000" class="rounded-xl cursor-pointer object-cover">
-                            <img src="./assets/images/prewed (11).JPEG" alt="Flexation | Naya & Amin"
+                            <img loading="lazy" src="./assets/images/prewed (11).JPEG" alt="Flexation | Amin & Nadia"
                                 class="h-auto w-full max-w-full object-cover" onclick="imgModal.openModal(this)" />
                         </div>
                         <div data-aos="fade-up" data-aos-duration="3000" class="rounded-xl cursor-pointer object-cover">
-                            <img src="./assets/images/prewed (8).JPEG" alt="Flexation | Naya & Amin"
+                            <img loading="lazy" src="./assets/images/prewed (8).JPEG" alt="Flexation | Amin & Nadia"
                                 class="h-auto w-full max-w-full object-cover" onclick="imgModal.openModal(this)" />
                         </div>
                         <div data-aos="fade-up" data-aos-duration="3000" class="rounded-xl cursor-pointer object-cover">
-                            <img src="./assets/images/prewed (4).JPEG" alt="Flexation | Naya & Amin"
+                            <img loading="lazy" src="./assets/images/prewed (4).JPEG" alt="Flexation | Amin & Nadia"
                                 class="h-auto w-full max-w-full object-cover" onclick="imgModal.openModal(this)" />
                         </div>
                         <div data-aos="fade-up" data-aos-duration="3000" class="rounded-xl cursor-pointer object-cover">
-                            <img src="./assets/images/prewed (5).JPEG" alt="Flexation | Naya & Amin"
+                            <img loading="lazy" src="./assets/images/prewed (5).JPEG" alt="Flexation | Amin & Nadia"
                                 class="h-auto w-full max-w-full object-cover" onclick="imgModal.openModal(this)" />
                         </div>
                     </div>
 
                     <div class="flex flex-col gap-2">
                         <div data-aos="fade-up" data-aos-duration="3000" class="rounded-xl cursor-pointer object-cover">
-                            <img src="./assets/images/prewed (10).JPEG" alt="Flexation | Naya & Amin"
+                            <img loading="lazy" src="./assets/images/prewed (10).JPEG" alt="Flexation | Amin & Nadia"
                                 class="h-auto w-full max-w-full object-cover" onclick="imgModal.openModal(this)" />
                         </div>
                         <div data-aos="fade-up" data-aos-duration="3000" class="rounded-xl cursor-pointer object-cover">
-                            <img src="./assets/images/prewed (2).JPEG" alt="Flexation | Naya & Amin"
+                            <img loading="lazy" src="./assets/images/prewed (2).JPEG" alt="Flexation | Amin & Nadia"
                                 class="h-auto w-full max-w-full object-cover" onclick="imgModal.openModal(this)" />
                         </div>
                         <div data-aos="fade-up" data-aos-duration="3000" class="rounded-xl cursor-pointer object-cover">
-                            <img src="./assets/images/prewed (7).JPEG" alt="Flexation | Naya & Amin"
+                            <img loading="lazy" src="./assets/images/prewed (7).JPEG" alt="Flexation | Amin & Nadia"
                                 class="h-auto w-full max-w-full object-cover" onclick="imgModal.openModal(this)" />
                         </div>
                         <div data-aos="fade-up" data-aos-duration="3000" class="rounded-xl cursor-pointer object-cover">
-                            <img src="./assets/images/prewed (3).JPEG" alt="Flexation | Naya & Amin"
+                            <img loading="lazy" src="./assets/images/prewed (3).JPEG" alt="Flexation | Amin & Nadia"
                                 class="h-auto w-full max-w-full object-cover" onclick="imgModal.openModal(this)" />
                         </div>
                         <div data-aos="fade-up" data-aos-duration="3000" class="rounded-xl cursor-pointer object-cover">
-                            <img src="./assets/images/prewed (9).JPEG" alt="Flexation | Naya & Amin"
+                            <img loading="lazy" src="./assets/images/prewed (9).JPEG" alt="Flexation | Amin & Nadia"
                                 class="h-auto w-full max-w-full object-cover" onclick="imgModal.openModal(this)" />
                         </div>
                     </div>
@@ -352,8 +384,8 @@
                     <div class="bg-white p-4 space-y-2 md:p-6 md:px-19 rounded-lg text-left text-colortext"
                         data-aos="fade-up" data-aos-duration="3000">
                         <div class="flex justify-between items-between">
-                            <img src="./assets/icons/chip-bank.png" class="w-16 mb-3" />
-                            <img src="./assets/icons/logo-bca.png" class="h-16" />
+                            <img loading="lazy" src="./assets/icons/chip-bank.png" class="w-16 mb-3" />
+                            <img loading="lazy" src="./assets/icons/logo-bca.png" class="h-20" />
                         </div>
                         <div class="text-sm text-background300 font-semibold font-sono">
                             An. Nadia
@@ -372,8 +404,8 @@
                     <div class="bg-white p-4 space-y-2 md:p-6 md:px-19 rounded-lg text-left text-colortext"
                         data-aos="fade-up" data-aos-duration="3000">
                         <div class="flex justify-between items-between">
-                            <img src="./assets/icons/chip-bank.png" class="w-16 mb-3" />
-                            <img src="./assets/icons/logo-bca.png" class="h-16" />
+                            <img loading="lazy" src="./assets/icons/chip-bank.png" class="w-16 mb-3" />
+                            <img loading="lazy" src="./assets/icons/logo-bni.png" class="h-8" />
                         </div>
                         <div class="text-sm text-background300 font-semibold font-sono">
                             An. Muhamad Amin
@@ -392,8 +424,8 @@
                     <div class="bg-white p-4 space-y-2 md:p-6 md:px-19 rounded-lg text-left text-colortext"
                         data-aos="fade-up" data-aos-duration="3000">
                         <div class="flex justify-between items-between">
-                            <img src="./assets/icons/chip-bank.png" class="w-16 mb-3" />
-                            <img src="./assets/icons/logo-dana.png" class="h-8" />
+                            <img loading="lazy" src="./assets/icons/chip-bank.png" class="w-16 mb-3" />
+                            <img loading="lazy" src="./assets/icons/logo-dana.png" class="h-8" />
                         </div>
                         <div class="text-sm text-background300 font-semibold font-sono">
                             An. Muhamad Amin
@@ -472,7 +504,7 @@
                     <div data-aos="fade-up" class="text-sm">
                         Kami Yang Berbahagia
                     </div>
-                    <div data-aos="fade-up" class="font-qwitcher text-5xl">Naya & Amin</div>
+                    <div data-aos="fade-up" class="font-qwitcher text-5xl">Amin & Nadia</div>
                     <div class="text-xs space-y-1">
                         <div>Made with ♥ by Flexation.Id</div>
                         <div class="space-x-2">
@@ -494,7 +526,7 @@
     <div class="hidden md:flex md:col-span-2">
         <div class="sticky top-0 left-0 w-screen h-screen overflow-hidden">
             <div class="w-full h-full bg-gray-200">
-                <img src="./assets/images/prewed (10).JPEG" class="object-cover w-full h-screen" />
+                <img loading="lazy" src="./assets/images/prewed (10).JPEG" class="object-cover w-full h-screen" />
                 <div class="absolute h-full inset-0 z-0">
                     <div class="bg-black opacity-50 h-full"></div>
                 </div>
@@ -502,7 +534,7 @@
                     <div class="flex flex-col gap-2">
                         <p class="font-tangerine tracking-wider text-5xl">The Wedding Of</p>
                         <h1 class="font-tangerine text-5xl tracking-widest font-bold">
-                            Naya &
+                            Nadia &
                             Amin
                         </h1>
                         <p class="font-cormorant tracking-wider uppercase">
@@ -524,7 +556,7 @@
 
             <!-- Image Slider -->
             <div class="m-8 flex justify-center items-center min-h-screen max-h-screen">
-                <img id="modalImage" src="" alt="Image"
+                <img loading="lazy" id="modalImage" src="" alt="Image"
                     class="w-auto h-auto max-h-[calc(100vh-150px)] object-cover rounded-lg" />
             </div>
 
@@ -545,9 +577,9 @@
         <script>
             AOS.init();
         </script>
-        <script src="./script/api-service.js"></script>
-        <script src="./script/animation.js"></script>
-        <script src="./script/index.js"></script>
+        <script src="./script/index.js" defer></script>
+        <script src="./script/api-service.js" async></script>
+        <script src="./script/animation.js" defer></script>
 </body>
 
 </html>
