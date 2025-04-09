@@ -24,13 +24,9 @@ async function getToken() {
 
     const data = await response.json();
     const token = data.data.token;
-    console.log(token);
-
     localStorage.setItem("token", token);
     getComment(token, id);
-  } catch (error) {
-    console.error("Error fetching token:", error);
-  }
+  } catch (error) {}
 }
 
 async function getComment(token, undanganId) {
@@ -46,14 +42,6 @@ async function getComment(token, undanganId) {
 
     const result = await response.json();
     const comments = result.data.comments;
-
-    console.log("📥 Komentar berhasil diambil!");
-    console.log("Daftar komentar:");
-    comments.forEach((comment, index) => {
-      console.log(`${index + 1}. ${comment.name} (${comment.presense})`);
-      console.log(comment.comment_text);
-      console.log("---");
-    });
 
     const container = document.getElementById("comments");
     container.innerHTML = "";
@@ -90,7 +78,11 @@ async function getComment(token, undanganId) {
                               ? "text-green-600"
                               : "text-red-600"
                           }"> 
-                          ${comment.presense === "hadir" ? "Hadir" : "Tidak Hadir"}
+                          ${
+                            comment.presense === "hadir"
+                              ? "Hadir"
+                              : "Tidak Hadir"
+                          }
                           </span>
                       </div>
                       <p class="text-sm font-normal py-2.5 text-gray-900">${
@@ -104,56 +96,51 @@ async function getComment(token, undanganId) {
       container.appendChild(commentEl);
     });
   } catch (error) {
-    console.error("Error fetching comments:", error);
     document.getElementById("comments").innerText = "Gagal ambil komentar.";
   }
 }
 
 window.onload = getToken;
 
-document.getElementById("postComment").addEventListener("submit", async function (e) {
-  e.preventDefault();
+document
+  .getElementById("postComment")
+  .addEventListener("submit", async function (e) {
+    e.preventDefault();
 
-  const name = document.getElementById("author").value.trim();
-  const presense = document.getElementById("hadir").value;
-  const commentText = document.getElementById("content").value.trim();
-  const undanganId = 4;
-  const token = localStorage.getItem("token");
+    const name = document.getElementById("author").value.trim();
+    const presense = document.getElementById("hadir").value;
+    const commentText = document.getElementById("content").value.trim();
+    const undanganId = 4;
+    const token = localStorage.getItem("token");
 
-  if (!name || !presense || !commentText) {
-    alert("Semua kolom wajib diisi.");
-    return;
-  }
-
-  const bodyData = {
-    name,
-    comment_text: commentText,
-    presense,
-    undangan_id: undanganId,
-  };
-
-  try {
-    const response = await fetch(`${urlBase}/comment/public/create`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "x-token": token,
-      },
-      body: JSON.stringify(bodyData),
-    });
-
-    const result = await response.json();
-
-    if (response.ok) {
-      alert("Komentar berhasil dikirim!");
-      document.getElementById("postComment").reset(); // Reset form
-      getComment(token, undanganId); 
-    } else {
-      console.error(result);
-      alert("Gagal mengirim komentar.");
+    if (!name || !presense || !commentText) {
+      alert("Semua kolom wajib diisi.");
+      return;
     }
-  } catch (error) {
-    console.error("Error posting comment:", error);
-    alert("Terjadi kesalahan saat mengirim komentar.");
-  }
-});
+
+    const bodyData = {
+      name,
+      comment_text: commentText,
+      presense,
+      undangan_id: undanganId,
+    };
+
+    try {
+      const response = await fetch(`${urlBase}/comment/public/create`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-token": token,
+        },
+        body: JSON.stringify(bodyData),
+      });
+
+      if (response.ok) {
+        alert("Komentar berhasil dikirim!");
+        document.getElementById("postComment").reset();
+        getComment(token, undanganId);
+      } else {
+        alert("Gagal mengirim komentar.");
+      }
+    } catch (error) {}
+  });
