@@ -53,7 +53,7 @@
     <meta name="twitter:site" content="@flexation_id">
 </head>
 
-<body class="relative bg-background200 text-white text-center lg:grid lg:grid-cols-3 lg:min-h-screen no-scrollbar">
+<body id='token' class="relative bg-background200 text-white text-center lg:grid lg:grid-cols-3 lg:min-h-screen no-scrollbar">
     <main class="relative">
         <!-- cover undangan  -->
         <div id="cover-modal"
@@ -452,7 +452,7 @@
                     </div>
                 </div>
                 <div class="grid grid-cols-1 gap-5 reveal fade-bottom p-3 rounded-xl text-start">
-                    <form data-aos="fade-up" id="commentForm" class="grid grid-cols-1 gap-4">
+                    <form data-aos="fade-up" id="postComment" class="grid grid-cols-1 gap-4">
                         <div>
                             <label for="author" class="block mb-2 text-sm font-medium">Nama</label>
                             <input type="text" id="author" name="author"
@@ -465,8 +465,8 @@
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                 placeholder="Pilih Kehadiran" required>
                                 <option value="">--Pilih Kehadiran--</option>
-                                <option value="true">Hadir</option>
-                                <option value="false">Tidak Hadir</option>
+                                <option value="hadir">Hadir</option>
+                                <option value="tidak_hadir">Tidak Hadir</option>
                             </select>
                         </div>
                         <div>
@@ -486,8 +486,8 @@
                         <hr class="border-3 border-primary" />
                     </div>
                     <!-- Komentar -->
-                    <div data-aos="fade-up" id="komentar"
-                        class="overflow-y-auto overscroll-auto no-scrollbar max-h-[400px]"></div>
+                    <div data-aos="fade-up" id="comments"
+                        class="overflow-y-auto overscroll-auto no-scrollbar h-[300px]"></div>
                 </div>
             </div>
 
@@ -577,9 +577,9 @@
         <script>
             AOS.init();
         </script>
-        <script src="./script/index.js" defer></script>
         <script src="./script/api-service.js" async></script>
         <script src="./script/animation.js" defer></script>
+        <script src="./script/index.js" defer></script>
 </body>
 
 </html>
