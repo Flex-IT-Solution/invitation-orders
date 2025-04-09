@@ -25,12 +25,10 @@ async function getToken() {
 
     const data = await response.json();
     const token = data.data.token;
-    console.log(token);
 
     localStorage.setItem("token", token);
     getComment(token, id);
   } catch (error) {
-    console.error("Error fetching token:", error);
   }
 }
 
@@ -46,15 +44,6 @@ async function getComment(token, undanganId) {
 
     const result = await response.json();
     const comments = result.data.comments;
-
-    console.log("📥 Komentar berhasil diambil!");
-    console.log("Daftar komentar:");
-    comments.forEach((comment, index) => {
-      console.log(`${index + 1}. ${comment.name} (${comment.presense})`);
-      console.log(comment.comment_text);
-      console.log("---");
-    });
-
     const container = document.getElementById("comments");
     container.innerHTML = "";
 
@@ -104,8 +93,6 @@ async function getComment(token, undanganId) {
       container.appendChild(commentEl);
     });
   } catch (error) {
-    console.error("Error fetching comments:", error);
-    document.getElementById("comments").innerText = "Gagal ambil komentar.";
   }
 }
 
@@ -119,11 +106,6 @@ document.getElementById("postComment").addEventListener("submit", async function
   const commentText = document.getElementById("content").value.trim();
   const undanganId = 4;
   const token = localStorage.getItem("token");
-
-  if (!name || !presense || !commentText) {
-    alert("Semua kolom wajib diisi.");
-    return;
-  }
 
   const bodyData = {
     name,
@@ -141,19 +123,13 @@ document.getElementById("postComment").addEventListener("submit", async function
       },
       body: JSON.stringify(bodyData),
     });
-
-    const result = await response.json();
-
     if (response.ok) {
       alert("Komentar berhasil dikirim!");
       document.getElementById("postComment").reset(); // Reset form
       getComment(token, undanganId); 
     } else {
-      console.error(result);
       alert("Gagal mengirim komentar.");
     }
   } catch (error) {
-    console.error("Error posting comment:", error);
-    alert("Terjadi kesalahan saat mengirim komentar.");
   }
 });
