@@ -12,11 +12,10 @@ function getQueryParameter(param) {
     document.getElementById('nama-tamu').textContent = `${namaTamu}`;
   }
 
-  
-const urlBase = "https://api.flexation.id/api/v0";
+  const urlBase = "https://api.flexation.id/api/v0";
 // Mengambil Token
 async function getToken() {
-  const id = 4;
+  const id = 6;
   const url = `${urlBase}/undangan/${id}/public-token`;
 
   try {
