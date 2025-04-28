@@ -103,7 +103,7 @@ document.getElementById("postComment").addEventListener("submit", async function
   const name = document.getElementById("author").value.trim();
   const presense = document.getElementById("hadir").value;
   const commentText = document.getElementById("content").value.trim();
-  const undanganId = 4;
+  const undanganId = 6;
   const token = localStorage.getItem("token");
 
   const bodyData = {
