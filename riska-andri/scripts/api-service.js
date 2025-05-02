@@ -100,7 +100,7 @@ function getQueryParameter(param) {
     const name = document.getElementById("author").value.trim();
     const presense = document.getElementById("hadir").value;
     const commentText = document.getElementById("content").value.trim();
-    const undanganId = localStorage.getItem("undanganId");
+    const undanganId = parseInt(localStorage.getItem("undanganId"), 10);
     const token = localStorage.getItem("token");
   
     const bodyData = {
