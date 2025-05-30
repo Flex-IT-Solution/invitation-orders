@@ -13,7 +13,7 @@ function getQueryParameter(param) {
   }
 
   const urlBase = "http://43.165.194.10:30080/api/v0";
-  const undanganId = 8; 
+  const undanganId = 12; 
   localStorage.setItem("undanganId", undanganId); 
   
   // Mengambil Token

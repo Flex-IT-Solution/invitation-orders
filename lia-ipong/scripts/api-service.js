@@ -13,9 +13,12 @@ if (namaTamu) {
 }
 
 const urlBase = "http://43.165.194.10:30080/api/v0";
+const undanganId = 4;
+localStorage.setItem("undanganId", undanganId);
+
 // Mengambil Token
 async function getToken() {
-  const id = 5;
+  const id = localStorage.getItem("undanganId");
   const url = `${urlBase}/undangan/${id}/public-token`;
 
   try {
@@ -24,14 +27,16 @@ async function getToken() {
 
     const data = await response.json();
     const token = data.data.token;
+
     localStorage.setItem("token", token);
     getComment(token, id);
-  } catch (error) {}
+  } catch (error) {
+    console.error("Token error:", error);
+  }
 }
 
 async function getComment(token, undanganId) {
   const url = `${urlBase}/comment/public/${undanganId}/list`;
-
   try {
     const response = await fetch(url, {
       method: "GET",
@@ -42,7 +47,6 @@ async function getComment(token, undanganId) {
 
     const result = await response.json();
     const comments = result.data.comments;
-
     const container = document.getElementById("comments");
     container.innerHTML = "";
 
@@ -63,40 +67,36 @@ async function getComment(token, undanganId) {
 
       commentEl.innerHTML = `
           <div class="flex items-start gap-2.5 my-2 mr-5">
-                  <div class="w-8 h-8 rounded-full bg-white text-center">
-                      <h1 class="font-bold text-background150 p-1 text-xl font-cinzeldecorative">${comment.name.charAt(
-                        0
-                      )}</h1>
-                  </div>
-                  <div class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 border-gray-200 bg-white rounded-e-xl rounded-es-xl">
-                      <div class="flex items-center space-x-2 rtl:space-x-reverse">
-                          <span class="text-sm font-semibold text-background400">${
-                            comment.name
-                          }</span>
-                          <span class="text-xs font-semibold ${
-                            comment.presense === "hadir"
-                              ? "text-green-600"
-                              : "text-red-600"
-                          }"> 
-                          ${
-                            comment.presense === "hadir"
-                              ? "Hadir"
-                              : "Tidak Hadir"
-                          }
-                          </span>
-                      </div>
-                      <p class="text-sm font-normal py-2.5 text-gray-900">${
-                        comment.comment_text
-                      }</p>
-                      <span class="text-xs font-normal text-gray-500">${formattedDate}, ${formattedTime}</span>
-                  </div>  
-              </div>
+            <div class="w-8 h-8 rounded-full bg-white text-center">
+                <h1 class="font-bold text-primary200 p-1 text-xl font-cinzeldecorative">${comment.name.charAt(
+                  0
+                )}</h1>
+            </div>
+            <div class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 border-gray-200 bg-white rounded-e-xl rounded-es-xl">
+                <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                    <span class="text-sm font-semibold text-primary200">${
+                      comment.name
+                    }</span>
+                    <span class="text-xs font-semibold ${
+                      comment.presense === "hadir"
+                        ? "text-green-600"
+                        : "text-red-600"
+                    }">
+                      ${comment.presense === "hadir" ? "Hadir" : "Tidak Hadir"}
+                    </span>
+                </div>
+                <p class="text-sm font-normal py-2.5 text-gray-900">${
+                  comment.comment_text
+                }</p>
+                <span class="text-xs font-normal text-gray-500">${formattedDate}, ${formattedTime}</span>
+            </div>  
+          </div>
         `;
 
       container.appendChild(commentEl);
     });
   } catch (error) {
-    document.getElementById("comments").innerText = "Gagal ambil komentar.";
+    console.error("Comment error:", error);
   }
 }
 
@@ -110,13 +110,8 @@ document
     const name = document.getElementById("author").value.trim();
     const presense = document.getElementById("hadir").value;
     const commentText = document.getElementById("content").value.trim();
-    const undanganId = 5;
+    const undanganId = parseInt(localStorage.getItem("undanganId"), 10);
     const token = localStorage.getItem("token");
-
-    if (!name || !presense || !commentText) {
-      alert("Semua kolom wajib diisi.");
-      return;
-    }
 
     const bodyData = {
       name,
@@ -134,7 +129,6 @@ document
         },
         body: JSON.stringify(bodyData),
       });
-
       if (response.ok) {
         alert("Komentar berhasil dikirim!");
         document.getElementById("postComment").reset();
@@ -142,5 +136,7 @@ document
       } else {
         alert("Gagal mengirim komentar.");
       }
-    } catch (error) {}
+    } catch (error) {
+      console.error("Post comment error:", error);
+    }
   });
