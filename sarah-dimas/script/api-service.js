@@ -12,7 +12,7 @@ function getQueryParameter(param) {
     document.getElementById('nama-tamu').textContent = `${namaTamu}`;
   }
 
-  const urlBase = "https://api.flexation.id/api/v0";
+  const urlBase = "http://43.165.194.10:30080/api/v0";
 // Mengambil Token
 async function getToken() {
   const id = 6;
