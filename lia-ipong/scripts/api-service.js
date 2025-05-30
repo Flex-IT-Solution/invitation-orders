@@ -12,8 +12,8 @@ if (namaTamu) {
   document.getElementById("nama-tamu").textContent = `${namaTamu}`;
 }
 
-const urlBase = "https://api.flexation.id/api/v0";
-const undanganId = 11;
+const urlBase = "http://43.165.194.10:30080/api/v0";
+const undanganId = 4;
 localStorage.setItem("undanganId", undanganId);
 
 // Mengambil Token
