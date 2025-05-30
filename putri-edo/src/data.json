@@ -1,0 +1,88 @@
+{
+    "mempelai": {
+      "pria": {
+        "namaLengkap": "Edo May Irawan",
+        "namaPanggilan": "Edo",
+        "namaBapak": "Syaiful Kafi",
+        "namaIbu": "Nurul Mahmudah",
+        "alamat": "Dsn. Domotan RT 01 RW 07 Purwokerto, Srengat, Blitar",
+        "foto" : "./src/assets/images/mempelai-pria.JPG",
+        "sosmed" : {
+          "ig" : "@edo",
+          "link_ig" : "https://www.instagram.com/edo/"
+        }
+      },
+      "wanita": {
+        "namaLengkap": "Putri Lilis Dyani",
+        "namaPanggilan": "Putri",
+        "namaBapak": "Budi Riyanto",
+        "namaIbu": "Karti'ah",
+        "alamat": "Dsn. Sumberingin RT 03 RW 05, Sanankulon, Blitar",
+        "foto" : "./src/assets/images/mempelai-wanita.JPG",
+        "sosmed" : {
+          "ig" : "@putri",
+          "link_ig" : "https://www.instagram.com/putri"
+        }
+      }
+    },
+    "acara": [
+      {
+        "nama": "Akad Nikah",
+        "hari": "Minggu",
+        "tanggal": "15 Juni 2025",
+        "waktu": "16:00",
+        "lokasi": {
+          "nama": "Wanita",
+          "alamat": "Dsn. Sumberingin RT 03 RW 05, Sanankulon, Blitar"
+        }
+      },
+      {
+        "nama": "Temu Manten",
+        "hari": "Senin",
+        "tanggal": "16 Juni 2025",
+        "waktu": "10:00",
+        "lokasi": {
+          "nama": "Wanita",
+          "alamat": "Dsn. Sumberingin RT 03 RW 05, Sanankulon, Blitar"
+        }
+      },
+      {
+        "nama": "Resepsi",
+        "hari": "Senin",
+        "tanggal": "16 Juni 2025",
+        "waktu": "12:00",
+        "lokasi": {
+          "nama": "Wanita",
+          "alamat": "Dsn. Sumberingin RT 03 RW 05, Sanankulon, Blitar"
+        }
+      }
+    ],
+    "angpaoDigital": [
+      {
+        "namaBank": "BNI",
+        "nomorRekening": "1430701317",
+        "namaPemilik": "Putri Lilis Dyani"
+      }
+    ],
+    "foto" : {
+      "foto-1" : "./src/assets/images/foto-prewed (1).jpg",
+      "foto-2" : "./src/assets/images/foto-prewed (2).jpg",
+      "foto-3" : "./src/assets/images/foto-prewed (3).jpg",
+      "foto-4" : "./src/assets/images/foto-prewed (4).jpg",
+      "foto-5" : "./src/assets/images/foto-prewed (5).jpg",
+      "foto-6" : "./src/assets/images/foto-prewed (6).jpg",
+      "foto-7" : "./src/assets/images/foto-prewed (7).jpg",
+      "foto-8" : "./src/assets/images/foto-prewed (8).jpg",
+      "foto-9" : "./src/assets/images/foto-prewed (9).jpg",
+      "foto-10" : "./src/assets/images/foto-prewed (10).jpg",
+      "foto-11" : "./src/assets/images/foto-prewed (11).jpg",
+      "foto-12" : "./src/assets/images/foto-prewed (12).jpg",
+      "foto-13" : "./src/assets/images/foto-prewed (13).jpg",
+      "foto-14" : "./src/assets/images/foto-prewed (14).jpg",
+      "foto-15" : "./src/assets/images/foto-prewed (15).jpg",
+      "foto-16" : "./src/assets/images/foto-prewed (16).jpg",
+      "foto-17" : "./src/assets/images/foto-prewed (17).jpg",
+      "foto-18" : "./src/assets/images/foto-prewed (18).jpg"
+    }
+  }
+  
