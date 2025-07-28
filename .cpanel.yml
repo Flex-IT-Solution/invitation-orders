@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    - export GIT_REPO="git@github.com:Flex-IT-Solution/invitation-orders.git"
+    - export BRANCH="preview"
+    - cd /home/flet5232/public_html/preview.flexation.web.id
+    - if [ ! -d ".git" ]; then git clone --branch $BRANCH $GIT_REPO .; else git pull origin $BRANCH; fi
