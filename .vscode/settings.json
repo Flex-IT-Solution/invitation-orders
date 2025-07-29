@@ -1,3 +1,6 @@
 {
-    "livePreview.defaultPreviewPath": "/riska-andri/index.html"
+    "livePreview.defaultPreviewPath": "/riska-andri/index.html",
+    "liveServer.settings.multiRootWorkspaceName": "invitation-orders",
+    "liveServer.settings.port": 5501
+
 }

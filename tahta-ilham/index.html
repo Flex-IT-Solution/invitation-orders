@@ -457,7 +457,7 @@
         </div>
       </div>
 
-      <!-- Whises  -->
+       <!-- Whises  -->
       <div class="p-8">
         <div data-aos="fade-up" data-aos-duration="3000" class="bg-secondary rounded-3xl p-3 pt-10 space-y-3">
           <div class="text-center">
@@ -465,7 +465,7 @@
             <div class="text-xs">Ucapan Selamat & Do'a</div>
           </div>
           <div class="grid grid-cols-1 gap-5 reveal fade-bottom p-3 rounded-xl">
-            <form id="commentForm" class="grid grid-cols-1 gap-4">
+            <form id="postComment" class="grid grid-cols-1 gap-4">
               <div>
                 <label for="author" class="block mb-2 text-sm font-medium">Nama</label>
                 <input type="text" id="author" name="author"
@@ -477,10 +477,9 @@
                 <select id="hadir" name="kehadiran"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   placeholder="Pilih" required>
-                  <option value="">--Pilih--</option>
-                  <option value="true">Hadir</option>
-                  <!-- <option value="Belum Tau">Belum Tahu</option> -->
-                  <option value="false">Tidak Hadir</option>
+                  <option value="">--Pilih Kehadiran--</option>
+                  <option value="hadir">Hadir</option>
+                  <option value="tidak_hadir">Tidak Hadir</option>
                 </select>
               </div>
               <div>
@@ -502,7 +501,8 @@
             </div>
 
             <!-- Komentar -->
-            <div id="komentar" class="overflow-y-auto overscroll-auto no-scrollbar max-h-[400px]"></div>
+            <div data-aos="fade-up" id="comments" class="overflow-y-auto overscroll-auto no-scrollbar max-h-[400px]">
+            </div>
           </div>
         </div>
       </div>
