@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./assets/logo/logo-flexation.png" />
+    <title>FLEXTATION | Undangan Nikah Elsa & Khoviv</title>
+
+    <!-- tailwind  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- CSS  -->
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- Flowbite -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+
+    <!-- Icons Flaticon -->
+    <link rel="stylesheet"
+        href="https://cdn-uicons.flaticon.com/2.2.0/uicons-regular-rounded/css/uicons-regular-rounded.css" />
+    <link rel="stylesheet"
+        href="https://cdn-uicons.flaticon.com/2.2.0/uicons-regular-straight/css/uicons-regular-straight.css" />
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.2.0/uicons-brands/css/uicons-brands.css" />
+    <link rel="stylesheet"
+        href="https://cdn-uicons.flaticon.com/2.3.0/uicons-solid-straight/css/uicons-solid-straight.css" />
+
+    <!-- Tailwind Config  -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#E5143C",
+                        secondary: "#F75270",
+                        colortext: "#353535",
+                    },
+                    fontFamily: {
+                        cinzel: ["Cinzel", "serif"],
+                        cinzeldecorative: ["Cinzel Decorative", "cursive"],
+                        poppins: ["Poppins", "sans-serif"],
+                        quicksand: ["Quicksand", "sans-serif"],
+                        roboto: ["Roboto", "sans-serif"],
+                        worksans: ["Work Sans", "sans-serif"],
+                        yesevaone: ["Yeseva One", "cursive"],
+                        bodonimoda: ["Bodoni Moda", "serif"],
+                        nunito: ["Nunito", "sans-serif"],
+                        sono: ["Sono", "sans-serif"],
+                        hatoli: ["Hatoli", "serif"],
+                        amalfi: ["Amalfi Coast", "cursive"],
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body data-email="nafis@nafisdvlp.my.id" data-password="admin123" class="font-quicksand max-w-screen no-scrollbar">
+    <div class="lg:grid lg:grid-cols-3 lg:min-h-screen">
+        <!-- Image md  -->
+        <div class="hidden md:flex md:col-span-2">
+            <div class="sticky top-0 left-0 w-screen h-screen overflow-hidden">
+                <div class="w-full h-full bg-gray-200">
+                    <img src="./assets/img/foto_catin (2).jpg" class="object-cover w-full h-screen" />
+                    <div class="absolute h-full inset-0 z-0">
+                        <!-- <div class="bg-gradient-to-t from-primary to-transparent bg-opacity-100 h-full"></div> -->
+                        <div class="bg-black opacity-50 h-full"></div>
+                    </div>
+                    <div
+                        class="absolute inset-0 z-10 flex flex-col justify-end text-center h-screen p-20 gap-8 text-white">
+                        <div class="flex flex-col gap-2 uppercase">
+                            <p class="font-cinzel tracking-wider">THE WEDDING OF</p>
+                            <h1 class="font-cinzeldecorative text-3xl tracking-widest">
+                                ELSA<span class="font-cinzel"> & </span> KHOVIV
+                            </h1>
+                            <p class="font-cinzel tracking-wider">BLITAR, 16 OKTOBER 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kontent -->
+        <div class="relative">
+            <!-- Cover Open Invitation  -->
+            <div class="absolute inset z-50 transition-transform duration-700" id="cover-modal">
+                <div id="cover-modal" class="">
+                    <!-- image background  -->
+                    <img src="./assets/img/foto_catin (2).jpg" class="w-full h-screen
+            object-cover absolute z-0 alt="">
+            <div class=" absolute inset-0 z-10 grid">
+                    <div class="bg-gradient-to-t from-primary to-transparent bg-opacity-100"></div>
+                </div>
+
+                <!-- text content  -->
+                <div class="relative z-20 flex flex-col justify-end text-center h-screen p-20 gap-8 text-white">
+                    <div class="flex flex-col gap-2 uppercase">
+                        <p class="font-cinzel tracking-wider">THE WEDDING OF</p>
+                        <h1 class="font-cinzeldecorative text-3xl tracking-widest">
+                            ELSA <span class="font-cinzel"> & </span> KHOVIV
+                        </h1>
+                    </div>
+                    <div class="font-nunito text-sm italic flex flex-col gap-1">
+                        <p>Kepada Yth. Bapak/Ibu/Saudara/i</p>
+                        <h1 class="not-italic text-2xl font-bodonimoda font-semibold">
+                            <div id="nama-tamu"></div>
+                        </h1>
+                        <p>
+                            *Mohon Maaf apabila ada kesalahan pada penulisan nama dan
+                            gelar
+                        </p>
+                    </div>
+                    <div class="">
+                        <button class="font-semibold" onclick="closeCover()">
+                            <div
+                                class="flex items-center justify-center gap-2 border-white border-x-4 text-white py-2 px-4 rounded hover:bg-white hover:text-colortext">
+                                <i class="fi fi-rr-envelope-open-text"></i>
+                                <span>Open Invitation</span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="relative z-10 hidden no-scrollbar" id="main-content">
+            <!-- Menu Bar  -->
+            <div class="fixed z-50 bottom-4 right-4">
+                <div id="rotateButton"
+                    class="spin px-2 pt-2 text-center cursor-pointer bg-gradient-to-b from-primary to-secondary rounded-full">
+                    <i class="fi fi-rs-record-vinyl text-2xl text-white"></i>
+                </div>
+            </div>
+            <audio autoplay loop id="audio" src="./assets/music/Pernikahan Kita - Tiara Andini feat Arsy Widianto.mp3" type="audio/mpeg"></audio>
+
+            <!-- Hero Section  -->
+            <div class="relative">
+                <!-- background  -->
+                <div class="absolute inset-0 z-0 h-screen">
+                    <!-- gambar slide dengan flowbite  -->
+                    <div id="custom-controls-gallery" class="relative" data-carousel="slide">
+                        <!-- Carousel wrapper -->
+                        <div class="relative h-screen w-full overflow-hidden">
+                            <!-- Item 1 -->
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                <img src="./assets/img/foto_catin (1).jpg"
+                                    class="absolute block w-full h-screen object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                    alt="" />
+                            </div>
+                            <!-- Item 2 -->
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                                <img src="./assets/img/foto_catin (2).jpg"
+                                    class="absolute block w-full h-screen object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                    alt="" />
+                            </div>
+                            <!-- Item 3 -->
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                <img src="./assets/img/foto_catin (3).jpg"
+                                    class="absolute block w-full h-screen object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                    alt="" />
+                            </div>
+                            <!-- Item 4 -->
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                                <img src="./assets/img/foto_catin (4).jpg"
+                                    class="absolute block w-full h-screen object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                    alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- content  -->
+                <div class="relative z-10 flex flex-col h-screen justify-end p-5 text-white">
+                    <div class="flex flex-col gap-2 bg-secondary bg-opacity-50 pt-6 p-4 rounded-tr-3xl">
+                        <div class="flex-col gap-3 uppercase">
+                            <p class="font-cinzel text-sm tracking-wider">
+                                THE WEDDING OF
+                            </p>
+                            <h1 class="font-cinzeldecorative text-3xl tracking-widest">
+                                ELSA <span class="font-cinzel"> & </span> KHOVIV
+                            </h1>
+                        </div>
+                        <div class="flex gap-4 text-sm">
+                            <div class="flex flex-col items-center">
+                                <h1 id="days" class="text-2xl font-medium"></h1>
+                                <p>Day</p>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <h1 id="hours" class="text-2xl font-medium"></h1>
+                                <p>Hour</p>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <h1 id="minutes" class="text-2xl font-medium"></h1>
+                                <p>Min</p>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <h1 id="seconds" class="text-2xl font-medium"></h1>
+                                <p>Sec</p>
+                            </div>
+                        </div>
+                        <div>
+                            <button id="save-to-calender"
+                                class="font-medium text-sm flex items-center justify-center gap-2 border-white border-x-4 text-white py-1 px-3 rounded hover:bg-white hover:text-colortext">
+                                <div class="">
+                                    <i class="fi fi-rs-calendar"></i>
+                                    <span>Save to Calender</span>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Surah Section -->
+            <div class="relative">
+                <!-- background  -->
+                <div class="absolute inset-0 z-0 grid grid-cols-2">
+                    <div class="bg-gradient-to-r from-primary to-secondary h-full"></div>
+                    <div class="bg-gradient-to-l from-primary to-secondary h-full"></div>
+                </div>
+
+                <!-- content  -->
+                <div class="relative z-10 text-white">
+                    <h1 class="reveal fade-bottom text-6xl font-hatoli text-center p-8">
+                        EK
+                    </h1>
+                    <!-- text content  -->
+                    <div class="reveal fade-bottom font-bodonimoda text-center pb-8 px-3">
+                        <p class="tracking-wider text-xs">
+                            Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan
+                            untukmu isteri-isteri dari jenismu sendiri, supaya kamu
+                            cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya
+                            diantaramu rasa kasih dan sayang. Sesungguhnya pada yang
+                            demikian itu benar-benar terdapat tanda-tanda bagi kaum yang
+                            berfikir.
+                        </p>
+                        <p class="mt-4 tracking-wider text-xs">(Q.S Ar Rum : 21)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Groom & Bride Saection  -->
+            <div class="bg-white min-h-screen px-8 py-8">
+                <div class="reveal fade-bottom text-center flex flex-col gap-2">
+                    <h1 class="font-amalfi text-base text-sm my-4">
+                        Assalamualaikum Wr. Wb.
+                    </h1>
+                    <p class="text-sm tracking-wider mt-1">
+                        Dengan memohon Rahmat dan Ridho Allah SWT, Kami bermaksud
+                        mengundang Bapak/Ibu/Saudara/i untuk hadir dalam pernikahan kami
+                    </p>
+                </div>
+
+                <div class="pt-8 items-center justify-center flex flex-col">
+                    <!-- Catin Laki-Laki  -->
+                    <div class="reveal fade-bottom items-center justify-center flex flex-col">
+                        <div>
+                            <img class="rounded-xl object-cover w-52 h-52 shadow-xl"
+                                src="./assets/img/mempelai-wanita.jpg" alt="" />
+                        </div>
+                        <div class="p-5 text-center">
+                            <h1 class="font-semibold font-cinzel text-xl">
+                                Elsa Arifiyanti
+                            </h1>
+                            <p class="text-sm">
+                                Putri dari <br />
+                                Bpk. Mohammad Arifin & Ibu Suyanti
+                            </p>
+                            <p class="text-sm">
+                                jl Ahmad Dahlan rt 2 rw 5 lingkungan jengglong kel kaweron
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-5 reveal fade-bottom items-center justify-center flex flex-col">
+                        <h1 class="text-3xl font-cinzel font-bold text-colortext">&</h1>
+                    </div>
+                    <!-- Catin Perempuan  -->
+                    <div class="reveal fade-bottom reveal fade-bottom items-center justify-center flex flex-col">
+                        <img class="rounded-xl object-cover w-52 h-52 shadow-xl"
+                            src="./assets/img/mempelai-pria.jpg" alt="" />
+                        <div class="p-5 text-center">
+                            <h1 class="font-semibold font-cinzel text-xl">
+                                Khoviv Syaifudin Zuhri
+                            </h1>
+                            <p class="text-sm">
+                                Putra dari <br />
+                                Alm. Bpk. Sarno Efendi & Ibu Nur Aini
+                            </p>
+                             <p class="text-sm">
+                                dsn Bendosewu rt 2 rw 2 desa Bendosewu kec talun
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                      </div>
+
+            <!-- Weeding Event  -->
+            <div class="bg-secondary min-h-screen p-8 overflow-hidden max-w-screen">
+                <div class="text-white grid grid-cols-2 items-center">
+                    <h1 class="font-cinzeldecorative text-3xl tracking-widest">
+                        Wedding Event
+                    </h1>
+                    <hr class="border-1" />
+                </div>
+
+                <div class="flex flex-col gap-8 pt-8">
+                    <!-- Akad Nikah  -->
+                    <div class="reveal fade-left flex flex-col justify-self-start w-full">
+                        <div class="rounded-tr-3xl w-full">
+                            <img src="./assets/img/foto catin 3x2.jpg" class="rounded-tr-3xl object-cover w-full h-56"
+                                alt="" />
+                        </div>
+                        <div class="flex bg-primary">
+                            <div class="flex items-center justify-center">
+                                <h1 class="text-white font-bodonimoda text-2xl w-16 -mb-24 rotate-[270deg]">
+                                    AkadNikah
+                                </h1>
+                            </div>
+                            <div class="bg-white w-full mt-3 p-5">
+                                <div>
+                                    <h1 class="text-base font-yesevaone text-primary">
+                                        Kamis, 16 Oktober 2025
+                                    </h1>
+                                    <p class="font-quicksand text-colortext text-sm">
+                                        Pukul 08.30 WIB - Selesai
+                                    </p>
+                                </div>
+                                <hr class="border-1.5 border-primary my-4" />
+                                <div>
+                                    <h1 class="text-base font-yesevaone text-primary">
+                                        Lokasi
+                                    </h1>
+                                    <p class="font-quicksand text-colortext pt-1 pb-2 text-sm">
+                                        Kediaman mempelai wanita <br />
+                                        Jl Ahmad Dahlan RT 2 RW 5 <br>
+                                        Lingkungan Jengglong Kel Kaweron
+                                    </p>
+                                    <a href="https://goo.gl/maps/aArtGn3pafAuJJTy7">
+                                        <button
+                                            class="bg-primary text-white hover:bg-secondary p-1.5 px-2 rounded text-xs">
+                                            <i class="fi fi-rs-map-marker"></i>
+                                            Maps Lokasi
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Resepsi  -->
+                    <div class="reveal fade-right flex flex-col justify-self-start w-full">
+                        <div class="rounded-tr-3xl w-full">
+                            <img src="./assets/img/foto catin 3x2 (4).jpg" class="rounded-tl-3xl object-cover w-full h-56"
+                                alt="" />
+                        </div>
+                        <div class="flex bg-primary">
+                            <div class="bg-white w-full mt-3 p-5">
+                                <div>
+                                    <h1 class="text-base font-yesevaone text-primary">
+                                        Kamis, 16 Oktober 2025
+                                    </h1>
+                                    <p class="font-quicksand text-colortext text-sm">
+                                        Pukul 13.00 WIB - Selesai
+                                    </p>
+                                </div>
+                                <hr class="border-1.5 border-primary my-4" />
+                                <div>
+                                    <h1 class="text-base font-yesevaone text-primary">
+                                        Lokasi
+                                    </h1>
+                                    <p class="font-quicksand text-colortext pb-2 pt-1 text-sm">
+                                        Kediaman mempelai wanita <br />
+                                        Jl Ahmad Dahlan RT 2 RW 5 <br>
+                                        Lingkungan Jengglong Kel Kaweron
+                                    </p>
+                                    <a href="https://goo.gl/maps/aArtGn3pafAuJJTy7">
+                                        <button
+                                            class="bg-primary text-white hover:bg-secondary p-1.5 px-2 rounded text-sm">
+                                            <i class="fi fi-rs-map-marker"></i>
+                                            Maps Lokasi
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-center">
+                                <h1 class="text-white font-bodonimoda text-2xl w-16 rotate-[270deg]">
+                                    Resepsi
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Akad Nikah  -->
+                    <div class="reveal fade-left flex flex-col justify-self-start w-full">
+                        <div class="rounded-tr-3xl w-full">
+                            <img src="./assets/img/foto catin 3x2 (2).jpg" class="rounded-tr-3xl object-cover w-full h-56"
+                                alt="" />
+                        </div>
+                        <div class="flex bg-primary">
+                            <div class="flex items-center justify-center">
+                                <h1 class="text-white font-bodonimoda text-2xl w-16 -mb-24 rotate-[270deg]">
+                                    UnduhMantu
+                                </h1>
+                            </div>
+                            <div class="bg-white w-full mt-3 p-5">
+                                <div>
+                                    <h1 class="text-base font-yesevaone text-primary">
+                                        Minggu, 19 Oktober 2025
+                                    </h1>
+                                    <p class="font-quicksand text-colortext text-sm">
+                                        Pukul 13.00 WIB - Selesai
+                                    </p>
+                                </div>
+                                <hr class="border-1.5 border-primary my-4" />
+                                <div>
+                                    <h1 class="text-base font-yesevaone text-primary">
+                                        Lokasi
+                                    </h1>
+                                    <p class="font-quicksand text-colortext pt-1 pb-2 text-sm">
+                                        Kediaman mempelai pria <br />
+                                        Dsn Bendosewu RT 2 RW 2 <br>
+                                        Desa Bendosewu Kec talun
+                                    </p>
+                                    <a href="https://goo.gl/maps/RZa9TAQQc1iJQjc37?g_st=aw">
+                                        <button
+                                            class="bg-primary text-white hover:bg-secondary p-1.5 px-2 rounded text-xs">
+                                            <i class="fi fi-rs-map-marker"></i>
+                                            Maps Lokasi
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Love Story Section  -->
+                <div class="relative overflow-hidden">
+                    <!-- background  -->
+                    <div class="absolute inset-0 z-0 grid grid-cols-2">
+                        <div class="bg-gradient-to-r from-primary to-secondary h-full"></div>
+                        <div class="bg-gradient-to-l from-primary to-secondary h-full"></div>
+                    </div>
+    
+                    <!-- Konten  -->
+                    <div class="min-h-screen p-8 relative z-10">
+                        <div class="grid grid-cols-2 items-center ">
+                            <h1 class="font-cinzeldecorative text-3xl tracking-widest text-white">Love Story</h1>
+                            <hr class="border-3">
+                        </div>
+                        <div class="py-8">
+                            <ol class="border-l-2 border-white">
+                                <li class="">
+                                    <div class="flex-start">
+                                        <div class="bg-white w-8 h-8 flex items-center justify-center rounded-full -ml-3.5">
+                                            <i class="fi fi-ss-heart text-primary font-medium pt-1"></i>
+                                        </div>
+                                        <div
+                                            class="reveal fade-right block p-4 rounded-lg shadow-lg bg-gray-100 ml-6 mb-10">
+                                            <!-- <img src="./assets/image/img_catin (5).jpg" class="rounded-lg alt=""> -->
+                                        <h1 class=" font-medium text-primary text-xl font-yesevaone">Awal Pertemuan</h1>
+                                            <p class="text-gray-700 text-sm">
+                                                Pada awal tahun 2020, Kami bertemu di sebuah organisasi masyarakat berbasis Islam. Dari pertemuan yang tidak direncanakan itu, ada rasa nyaman yang muncul begitu saja. Karena sering adanya event, sehingga sering bertegur sapa tanpa disengaja.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="">
+                                    <div class="flex-start">
+                                        <div class="bg-white w-8 h-8 flex items-center justify-center rounded-full -ml-3.5">
+                                            <i class="fi fi-ss-heart text-primary font-medium pt-1"></i>
+                                        </div>
+                                        <div class="reveal fade-right block p-4 rounded-lg shadow-lg bg-gray-100 ml-6 mb-10">
+                                            <!-- <img src="./assets/image/img_catin (5).jpg" class="rounded-lg alt="> -->
+                                            <h1 class="font-medium text-primary text-xl font-yesevaone">Menjalin Hubungan</h1>
+                                            <p class="text-gray-700 text-sm">
+                                                Tanpa banyak drama, kami membangun komunikasi perlahan, saling mengenal lebih dalam, dan akhirnya menyadari bahwa kami memiliki banyak kesamaan.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </li>
+                                 <li class="">
+                                    <div class="md:flex flex-start">
+                                        <div class="bg-white w-8 h-8 flex items-center justify-center rounded-full -ml-3.5">
+                                            <i class="fi fi-ss-heart text-primary font-medium pt-1"></i>
+                                        </div>
+                                        <div class="reveal fade-right block p-4 rounded-lg shadow-lg bg-gray-100 ml-6 mb-10">
+                                            <!-- <img src="./assets/image/img_catin (5).jpg" class="rounded-lg alt=""> -->
+                                        <h1 class=" font-medium text-primary text-xl font-yesevaone">Lamaran</h1>
+                                            <p class="text-gray-700 text-sm">
+                                                Setelah saling menguatkan selama beberapa tahun, kami memutuskan untuk melangkah ke jenjang yang lebih serius dengan lamaran yang hangat disaksikan keluarga.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="">
+                                    <div class="md:flex flex-start">
+                                        <div class="bg-white w-8 h-8 flex items-center justify-center rounded-full -ml-3.5">
+                                            <i class="fi fi-ss-heart text-primary font-medium pt-1"></i>
+                                        </div>
+                                        <div class="reveal fade-right block p-4 rounded-lg shadow-lg bg-gray-100 ml-6 mb-10">
+                                            <!-- <img src="./assets/image/img_catin (5).jpg" class="rounded-lg alt=""> -->
+                                        <h1 class=" font-medium text-primary text-xl font-yesevaone">Pernikahan</h1>
+                                            <p class="text-gray-700 text-sm">
+                                                Kini, dengan penuh rasa syukur, kami mengundang Anda untuk menjadi saksi janji suci kami dalam ikatan pernikahan yang penuh kebahagiaan.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+            <!-- Gallery Section -->
+            <div class="py-6">
+                <div class="reveal fade-bottom grid grid-cols-3 items-center text-center p-2">
+                    <hr class="border-3" />
+                    <h1 class="font-cinzeldecorative text-2xl tracking-widest text-colortext">
+                        Gallery
+                    </h1>
+                    <hr class="border-3" />
+                </div>
+                <div class="p-8">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="grid gap-4">
+                            <div class="reveal fade-bottom">
+                                <img class="h-auto max-w-full rounded-lg cursor-pointer object-cover"
+                                    src="./assets/img/foto_catin (1).jpg" alt=""
+                                    onclick="openModal('./assets/img/foto_catin (1).jpg')" />
+                            </div>
+                            <div class="reveal fade-bottom">
+                                <img class="h-auto max-w-full rounded-lg cursor-pointer"
+                                    src="./assets/img/foto_catin (2).jpg" alt=""
+                                    onclick="openModal('./assets/img/foto_catin (2).jpg')" />
+                            </div>
+                        </div>
+                        <div class="grid gap-4">
+                            <div class="reveal fade-bottom">
+                                <img class="h-auto max-w-full rounded-lg cursor-pointer"
+                                    src="./assets/img/foto_catin (3).jpg" alt=""
+                                    onclick="openModal('./assets/img/foto_catin (3).jpg')" />
+                            </div>
+                            <div class="reveal fade-bottom">
+                                <img class="h-auto max-w-full rounded-lg cursor-pointer"
+                                    src="./assets/img/foto_catin (4).jpg" alt=""
+                                    onclick="openModal('./assets/img/foto_catin (4).jpg')" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="imageModal"
+                        class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+                        <div class="bg-white rounded-lg overflow-hidden max-w-3xl w-full">
+                            <div class="relative">
+                                <button onclick="closeModal()"
+                                    class="absolute top-2 right-2 bg-gray-100 rounded-full p-2 hover:bg-gray-200 focus:outline-none">
+                                    <svg class="h-6 w-6 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                                        <path fill-rule="evenodd"
+                                            d="M6.225 4.811a1 1 0 011.414 0L12 9.172l4.361-4.361a1 1 0 111.414 1.414L13.414 10.586l4.361 4.361a1 1 0 01-1.414 1.414L12 12l-4.361 4.361a1 1 0 01-1.414-1.414l4.361-4.361-4.361-4.361a1 1 0 010-1.414z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                                <img id="modalImage" class="max-h-screen max-w-full" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gift Section  -->
+            <div class="p-8 bg-secondary">
+                <div class="text-center text-white reveal fade-bottom">
+                    <h1 class="font-cinzeldecorative text-xl tracking-widest">
+                        Angpao Digital
+                    </h1>
+                    <p class="text-sm my-5">
+                        Kehadiran & doa Anda adalah hadiah terindah untuk kami, namun
+                        jika Anda ingin memberi lebih, silakan gunakan informasi di
+                        bawah ini
+                    </p>
+                    <!-- <button id="toggleButton" onclick="toggleGift()" class="px-4 py-1 border border-white text-xs text-white rounded-3xl hover:bg-primary hover:text-white">
+                            Tampilkan
+                        </button> -->
+                    <div id="hiddenText" class="mt-2 mx-3 text-xs text-white">
+                        <!-- <h1 class="text-sm font-medium font-cinzel p-5">Detail Rekening</h1> -->
+                        <div class="grid grid-cols-1 gap-4">
+                            <div class="bg-white p-4 md:p-6 md:px-19 rounded-lg text-left text-colortext">
+                                <div class="flex justify-between items-between">
+                                    <img src="./assets/icons/chip.png" class="w-10 mb-3" />
+                                    <img src="./assets/icons/logo-bri.png" class="h-7" />
+                                </div>
+
+                                <p class="text-sm font-semibold">
+                                    An. Elsa Arifiyanti
+                                </p>
+                                <p class="text-sm" id="accountNumber">000901128703500</p>
+
+                                <button id="copyAccountButton" onclick="copyToClipboard(this)"
+                                    data-original-text="Salin No. Rekening"
+                                    class="bg-gray-500 hover:bg-gray-600 text-white p-2 rounded-lg text-xs mt-3 copy-button">
+                                    <i class="fi fi-ss-copy-alt"></i>
+                                    Salin No. Rekening
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RSVp Section  -->
+            <!-- <div class="relative min-h-screen bg-primary p-4">
+                <div class="text-white p-2">
+                    <h1 class="reveal fade-bottom text-center pt-7 pb-4 font-cinzeldecorative text-xl tracking-widest">
+                        Ucapan & RSVP
+                    </h1>
+
+                    <div
+                        class="grid grid-cols-1 gap-5 reveal fade-bottom text-white p-4 border border-secondary rounded-xl">
+                        <form class="grid grid-cols-1 gap-4">
+                            <div>
+                                <label for="commenter_name" class="block mb-2 text-sm font-medium">Nama</label>
+                                <input type="text" id="commenter_name" name="commenter_name" value="nama-tamu"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                    placeholder="Nama" required />
+                            </div>
+                            <div>
+                                <label for="kehadiran" class="block mb-2 text-sm font-medium">Kehadiran</label>
+                                <select id="kehadiran" name="kehadiran"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                    placeholder="Pilih" required>
+                                    <option value="">--Pilih--</option>
+                                    <option value="Hadir">Hadir</option>
+                                    <option value="Belum Tau">Belum Tahu</option>
+                                    <option value="Tidak Hadir">Tidak Hadir</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="content" class="block mb-2 text-sm font-medium">Ucapan & Doa</label>
+                                <textarea id="content" name="content" rows="4"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                    placeholder="Tulis ucapan dan doa Anda untuk mempelai" required></textarea>
+                            </div>
+                            <div class="justify-self-end">
+                                <button type="submit"
+                                    class="bg-secondary py-2 px-6 text-sm rounded-lg hover:bg-primary hover:border hover:border-secondary focus:ring-blue-500 focus:border-blue-500">
+                                    Kirim
+                                </button>
+                            </div>
+                        </form>
+
+                        <div>
+                            <hr class="border-3 border-secondary" />
+                        </div>
+
+                        <div id="komentar" class="overflow-y-auto overscroll-auto no-scrollbar h-[400px]"></div>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- Footer  -->
+            <div>
+                <div class="relative min-h-screen">
+                    <div class="absolute inset-0 z-10 grid">
+                        <div class="bg-gradient-to-b from-secondary to-transparent bg-opacity-100">
+                            <div class="m-3">
+                                <p class="text-white font-quicksand font-medium my-10">
+                                    Atas kehadiran dan doa restu dari Bapak/Ibu/Saudara/I
+                                    <br />
+                                    sekalian, kami mengucapkan Terima Kasih.
+                                </p>
+                                <h1 class="text-white font-amalfi">Wassalamualaikum Wr. Wb.</h1>
+                            </div>
+                        </div>
+                        <div></div>
+                        <div class="flex flex-col self-end">
+                            <div class="flex flex-col gap-2 bg-white rounded-tr-3xl p-5 mr-20 ml-3">
+                                <p class="italic font-medium">Kami yang berbahagia</p>
+                                <h1 class="font-cinzeldecorative text-3xl tracking-widest">
+                                    ELSA<span class="font-cinzel"> & </span> KHOVIV
+                                </h1>
+                            </div>
+                            <div
+                                class="bg-primary text-white text-center flex flex-col items-center justify-center p-5">
+                                <p>Made with &hearts; by</p>
+                                <a href="https://flexation.site">
+                                    <img src="./assets/logo/flexdev-white.png" class="w-32 my-3" alt="" />
+                                </a>
+                                <div class="gap-3 mt-3">
+                                    <a href="https://wa.me/6285732705891">
+                                        <i
+                                            class="fi fi-brands-whatsapp bg-white text-primary p-1 rounded-full hover:bg-primary hover:text-white"></i>
+                                    </a>
+                                    <a href="https://www.instagram.com/euphoria.flex/">
+                                        <i
+                                            class="fi fi-brands-instagram bg-white text-primary p-1 rounded-full hover:bg-primary hover:text-white"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="./assets/img/foto_catin (2).jpg" class="object-cover h-screen w-full" alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- JS  -->
+    <script src="./js/script.js"></script>
+    <script src="./js/index.js"></script>
+    <!-- Flowbite  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+</body>
+
+</html>
